@@ -999,3 +999,17 @@ const comment = (() => {
         kirim,
     };
 })();
+
+const musicFiles = [
+    "./assets/music/sound-1.mp3",
+    "./assets/music/sound-2.mp3",
+];
+
+const getRandomMusic = () => musicFiles[Math.floor(Math.random() * musicFiles.length)];
+
+const updateMusicUrl = (button) => button.dataset.url = getRandomMusic();
+
+const playRandomMusic = (button) => updateMusicUrl(button);
+
+const button = document.getElementById('tombol-musik');
+playRandomMusic(button);
